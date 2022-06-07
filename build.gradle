@@ -1,0 +1,32 @@
+plugins {
+    id 'war'
+}
+
+war {
+    archiveName "calculator.war"
+}
+
+group 'org.example'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+def versionTests = '5.8.2'
+def versionSpring = '5.3.19'
+
+dependencies {
+    
+	testImplementation "org.junit.jupiter:junit-jupiter-api:$versionTests"
+	testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$versionTests"
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    implementation(["org.springframework:spring-core:$versionSpring",
+                    "org.springframework:spring-context:$versionSpring",
+                    "org.springframework:spring-beans:$versionSpring",
+                    "org.springframework:spring-test:$versionSpring"])
+}
+
+test {
+    useJUnitPlatform()
+}
