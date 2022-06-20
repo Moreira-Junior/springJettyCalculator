@@ -57,8 +57,8 @@ public class CalculatorServlet extends HttpServlet {
         		+ "            \n"
         		+ "        </form>\n"
         		);
-        if(request == null || request.getParameter("number1") == null || request.getParameter("number1").isBlank() ||
-        		request.getParameter("number2") == null || request.getParameter("number2").isBlank()) {
+        if(request == null || request.getParameter("number1") == null || request.getParameter("number1").isEmpty() ||
+        		request.getParameter("number2") == null || request.getParameter("number2").isEmpty()) {
         	writer.println("</body>\n</html>");
         }
         else {
